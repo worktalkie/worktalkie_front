@@ -9,12 +9,14 @@ export const BI = () => {
           alt="BI_white"
           width={62}
           height={62}
+          priority
         />
         <Image
           src="/assets/images/logotype.png"
           alt="BI_white"
           width={198}
           height={32}
+          priority
         />
       </div>
       <div className="font-semibold mt-5 mb-8 text-[#21266d] text-sm tracking-[-0.14px] ">
