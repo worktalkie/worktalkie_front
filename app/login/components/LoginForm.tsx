@@ -1,6 +1,7 @@
 "use client";
 
-import { Button, TextField } from "@radix-ui/themes";
+import { Divider, LongButton, TextInput } from "@/packages";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { loginType } from "../types";
@@ -23,29 +24,31 @@ export const LoginForm = () => {
       onSubmit={handleSubmit(onSubmit)}
       className="flex w-screen gap-2.5 flex-col items-center"
     >
-      <TextField.Root
-        variant="surface"
-        placeholder="ID"
-        size="3"
-        className="w-[273px]"
-        {...register("ID", { required: true })}
-      >
-        <TextField.Slot pl="10px" />
-        <TextField.Slot pr="10px" />
-      </TextField.Root>
-      {errors.ID && <span>This field is required</span>}
-      <TextField.Root
-        variant="surface"
-        placeholder="PW"
-        size="3"
-        className="w-[273px]"
+      <TextInput placeholder="ID" {...register("ID", { required: true })} />
+      <TextInput
+        placeholder="Password"
         {...register("PW", { required: true })}
-      >
-        <TextField.Slot pl="10px" />
-        <TextField.Slot pr="10px" />
-      </TextField.Root>
-      {errors.PW && <span>This field is required</span>}
-      <Button type="submit">Submit</Button>
+      />
+
+      <LongButton type="submit">Log In</LongButton>
+      <Divider />
+      <LongButton bgColor="#03c75a">
+        <NaverLogin />
+      </LongButton>
     </form>
+  );
+};
+
+const NaverLogin = () => {
+  return (
+    <div className="flex justify-center align-middle gap-3 leading-4">
+      <Image
+        src="/assets/images/Naver.png"
+        alt="Naver logo"
+        width={16}
+        height={16}
+      />
+      네이버 로그인
+    </div>
   );
 };
