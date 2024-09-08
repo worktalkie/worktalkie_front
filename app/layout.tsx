@@ -1,5 +1,5 @@
 import "@/app/global.css";
-import { pretendard } from "@/packages";
+import { pretendard } from "@/packages/fonts";
 import { Providers } from "@/packages/shared";
 import "@radix-ui/themes/styles.css";
 import type { Metadata } from "next";
