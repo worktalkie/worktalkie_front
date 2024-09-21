@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { CarouselLayout } from "../CarouselLayout";
-import { DailyLearningCard } from "../layout/DailyLearning";
+import { DailyLearningCard } from "../card/DailyLearning";
 
 const data = [
   { title: "제목 1", description: "예상소요시간 3분", path: "AiTalk/1" },
