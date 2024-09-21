@@ -7,10 +7,10 @@ import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./styles.css";
 
-type CarouselType = {
+type CarouselLayoutType = {
   slides: ReactNode[];
 };
-export const Carousel = ({ slides }: CarouselType) => {
+export const CarouselLayout = ({ slides }: CarouselLayoutType) => {
   return (
     <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
       {slides?.map((slide) => {

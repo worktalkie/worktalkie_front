@@ -1,3 +1,4 @@
+export * from "./Carousel";
 export * from "./ContentWrapper";
 export * from "./Divider";
 export * from "./LongButton";
