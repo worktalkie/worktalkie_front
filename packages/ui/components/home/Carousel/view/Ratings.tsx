@@ -1,8 +1,7 @@
 import { ReactNode } from "react";
-import { ContentCaption } from "../../ContentCaption";
-import { ContentTitle } from "../../ContentTitle";
-import { RatingsCard } from "../card/Ratings";
+import { ContentCaption, ContentTitle } from "../../ContentLayout";
 import { CarouselLayout } from "../CarouselLayout";
+import { RatingsCard } from "../layout/Ratings";
 
 const data = {
   user: "정지혜",

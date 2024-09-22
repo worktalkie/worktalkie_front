@@ -3,12 +3,12 @@ type RatingsType = {
   score: number;
 };
 type RatingsCardProps = {
-  data: RatingsType[]; // 수정된 타입 정의
+  data: RatingsType[];
 };
 
 export const RatingsCard = ({ data }: RatingsCardProps) => {
   return (
-    <div className="BarGraphWrapper flex justify-around items-end px-[30px] h-[225px]">
+    <div className="BarGraphWrapper flex justify-around items-end px-[30px] h-[225px] mt-7">
       {data.map((d, i) => (
         <div
           key={d.date}
