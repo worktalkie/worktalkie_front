@@ -4,8 +4,11 @@ import { Divider, LongButton, TextInput } from "@/packages/ui";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { loginType } from "../types";
 
+type loginType = {
+  ID: string;
+  PW: string;
+};
 export const LoginForm = () => {
   const router = useRouter();
   const {
