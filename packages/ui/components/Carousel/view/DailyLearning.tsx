@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { ContentTitle } from "../../ContentTitle";
 import { CarouselLayout } from "../CarouselLayout";
 import { DailyLearningCard } from "../card/DailyLearning";
 
@@ -19,9 +20,7 @@ const DailyLearningSlides: ReactNode[] = data.map(
 export const DailyLearning = () => {
   return (
     <div className="DailyLearningWrapper">
-      <div className="text-lg font-bold mb-3 text-[#21266D] font-[pretendard]">
-        오늘의 추천학습
-      </div>
+      <ContentTitle>오늘의 추천학습</ContentTitle>
       <CarouselLayout slides={DailyLearningSlides} />
     </div>
   );

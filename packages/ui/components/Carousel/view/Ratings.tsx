@@ -1,4 +1,6 @@
 import { ReactNode } from "react";
+import { ContentCaption } from "../../ContentCaption";
+import { ContentTitle } from "../../ContentTitle";
 import { RatingsCard } from "../card/Ratings";
 import { CarouselLayout } from "../CarouselLayout";
 
@@ -41,13 +43,11 @@ export const Ratings = () => {
   const RatingSlides: ReactNode[] = ratings.map(({ type, rating }) => {
     return (
       <div className="RatingsWrapper w-[100%] ">
-        <div className="title text-[18px] font-bold font-[pretendard] mb-1.5 break-keep">
+        <ContentTitle>
           {user}님의 <span className="text-[#4d4afe]">{type}</span>는 100점
           만점에 {rating[3]?.score}점!
-        </div>
-        <div className="caption mb-2 text-[12px] text-[#62636c]">
-          스와이프하여 점수를 확인하세요
-        </div>
+        </ContentTitle>
+        <ContentCaption>스와이프하여 점수를 확인하세요</ContentCaption>
         <RatingsCard data={rating} />
       </div>
     );
