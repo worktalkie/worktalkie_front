@@ -10,7 +10,7 @@ type CardStackProps = {
 };
 export const CardStack = ({ data }: CardStackProps) => {
   return (
-    <div className="flex flex-wrap gap-4 justify-between">
+    <div className="flex flex-wrap gap-4 justify-between mb-[120px]">
       {data.map((cardData) => {
         return <Card data={cardData} />;
       })}
