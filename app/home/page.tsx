@@ -1,4 +1,10 @@
-import { ContentWrapper, DailyLearning, Header, Ratings } from "@/packages/ui";
+import {
+  ContentWrapper,
+  DailyLearning,
+  Header,
+  Ratings,
+  Stamp,
+} from "@/packages/ui";
 
 const Home = () => {
   return (
@@ -6,6 +12,7 @@ const Home = () => {
       <Header />
       <ContentWrapper>
         <DailyLearning />
+        <Stamp />
         <Ratings />
       </ContentWrapper>
     </>
