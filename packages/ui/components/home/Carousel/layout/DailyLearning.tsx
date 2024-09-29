@@ -22,7 +22,7 @@ export const DailyLearningCard = ({
     router.push(path);
   };
   return (
-    <div className="CardWrapper w-[100%]">
+    <div className="CardWrapper w-[100%] mt-1.5">
       <div className="CardContent bg-[#f7f9ff] w-[100%] flex px-3 py-4 gap-3 rounded-b-none rounded-t border border-[#e1e8ff]">
         <div className="ImageContainer relative overflow-hidden w-[44px] h-[44px] rounded-md">
           <Image src={imageSrc} fill alt="daily learning thumbnail" />
