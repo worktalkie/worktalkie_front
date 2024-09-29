@@ -2,6 +2,7 @@ import {
   ContentWrapper,
   DailyLearning,
   Header,
+  PracticeList,
   Ratings,
   Stamp,
 } from "@/packages/ui";
@@ -13,6 +14,7 @@ const Home = () => {
       <ContentWrapper>
         <DailyLearning />
         <Stamp />
+        <PracticeList />
         <Ratings />
       </ContentWrapper>
     </>

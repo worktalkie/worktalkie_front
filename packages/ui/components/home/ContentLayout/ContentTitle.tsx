@@ -5,7 +5,7 @@ type ContentTitleProps = {
 };
 export const ContentTitle = ({ children }: ContentTitleProps) => {
   return (
-    <div className="title text-[18px] font-bold font-[pretendard] mb-1.5 break-keep">
+    <div className="title text-[18px] font-bold font-[pretendard] text-[#21266d] mb-1.5 break-keep">
       {children}
     </div>
   );
