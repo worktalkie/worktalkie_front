@@ -1,4 +1,5 @@
 import {
+  ArticleCardList,
   ContentWrapper,
   DailyLearning,
   Header,
@@ -16,6 +17,7 @@ const Home = () => {
         <Stamp />
         <PracticeList />
         <Ratings />
+        <ArticleCardList />
       </ContentWrapper>
     </>
   );
