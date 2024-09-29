@@ -13,7 +13,8 @@ export const LongButton = ({
 }: ButtonProps) => {
   return (
     <button
-      className={`mt-[16px] w-[280px] h-[48px] bg-[${bgColor}] rounded-md cursor-pointer text-white font-semibold`}
+      className={`mt-[16px] w-[280px] h-[48px] rounded-md cursor-pointer text-white font-semibold`}
+      style={{ backgroundColor: bgColor }}
       {...props}
     >
       {children}

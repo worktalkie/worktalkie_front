@@ -1,10 +1,24 @@
-import { Header } from "./components";
+import {
+  ArticleCardList,
+  ContentWrapper,
+  DailyLearning,
+  Header,
+  PracticeList,
+  Ratings,
+  Stamp,
+} from "@/packages/ui";
 
 const Home = () => {
   return (
     <>
       <Header />
-      <div className="h-[1200px]"></div>
+      <ContentWrapper>
+        <DailyLearning />
+        <Stamp />
+        <PracticeList />
+        <Ratings />
+        <ArticleCardList />
+      </ContentWrapper>
     </>
   );
 };

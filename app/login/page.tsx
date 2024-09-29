@@ -1,4 +1,4 @@
-import { BI, LoginForm } from "./components";
+import { BI, LoginForm } from "@/packages/ui";
 
 const Login = () => {
   return (
