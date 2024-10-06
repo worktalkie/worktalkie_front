@@ -49,7 +49,9 @@ export const LoginForm = () => {
           {...register("ID", { required: "ID를 입력해 주세요." })}
         />
         {errors.ID && (
-          <span className="text-red-500 text-xs">{errors.ID.message}</span>
+          <span className="text-red-500 text-xs text-left w-[270px]">
+            {errors.ID.message}
+          </span>
         )}
 
         {/* PW 입력 필드 */}
@@ -59,7 +61,9 @@ export const LoginForm = () => {
           {...register("PW", { required: "비밀번호를 입력해 주세요." })}
         />
         {errors.PW && (
-          <span className="text-red-500 text-xs">{errors.PW.message}</span>
+          <span className="text-red-500 text-xs text-left w-[270px]">
+            {errors.PW.message}
+          </span>
         )}
 
         <LongButton type="submit">Log In</LongButton>
