@@ -1,8 +1,7 @@
 "use client";
 
 import { login } from "@/packages/shared/utils/supabase/action";
-import { Divider, LongButton, TextInput } from "@/packages/ui";
-import * as Toast from "@radix-ui/react-toast";
+import { Divider, ErrorToast, LongButton, TextInput } from "@/packages/ui";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -73,18 +72,7 @@ export const LoginForm = () => {
         </LongButton>
       </form>
 
-      {/* Radix Toast */}
-      <Toast.Provider swipeDirection="right">
-        <Toast.Root
-          className="bg-red-500 text-white p-4 rounded-lg shadow-lg"
-          open={open}
-          onOpenChange={setOpen}
-        >
-          <Toast.Title className="font-bold">오류 발생</Toast.Title>
-          <Toast.Description>{errorMessage}</Toast.Description>
-        </Toast.Root>
-        <Toast.Viewport className="fixed bottom-0 right-0 p-4" />
-      </Toast.Provider>
+      <ErrorToast open={open} setOpen={setOpen} errorMessage={errorMessage} />
     </>
   );
 };
