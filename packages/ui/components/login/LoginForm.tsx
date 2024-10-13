@@ -1,44 +1,74 @@
 "use client";
 
-import { Divider, LongButton, TextInput } from "@/packages/ui";
+import { login } from "@/packages/shared/utils/supabase/action";
+import { Divider, ErrorToast, LoginInput, LongButton } from "@/packages/ui";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { MouseEvent, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 type loginType = {
   ID: string;
   PW: string;
 };
+
 export const LoginForm = () => {
-  const router = useRouter();
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<loginType>();
+  const router = useRouter();
+
+  const [open, setOpen] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
   const onSubmit: SubmitHandler<loginType> = (data) => {
-    console.log(data);
-    router.push("/home");
+    login(data.ID, data.PW)
+      .then((success) => {
+        if (success) {
+          router.push("/home");
+        }
+      })
+      .catch(() => {
+        setErrorMessage("로그인에 실패했습니다. 다시 시도해주세요.");
+        setOpen(true);
+      });
+  };
+
+  const handleSignup = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    router.push("/signup");
+  };
+
+  const handleNaverLogin = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
   };
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="flex w-screen gap-2.5 flex-col items-center"
-    >
-      <TextInput placeholder="ID" {...register("ID", { required: true })} />
-      <TextInput
-        placeholder="Password"
-        {...register("PW", { required: true })}
-      />
+    <>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex w-screen gap-2.5 flex-col items-center"
+      >
+        <LoginInput register={register} errors={errors} />
 
-      <LongButton type="submit">Log In</LongButton>
-      <Divider />
-      <LongButton bgColor="#03c75a">
-        <NaverLogin />
-      </LongButton>
-    </form>
+        <LongButton type="submit">Log In</LongButton>
+        <LongButton
+          onClick={handleSignup}
+          bgColor="#D3DDFF"
+          textColor="#4D4AFE"
+        >
+          회원가입
+        </LongButton>
+        <Divider />
+        <LongButton bgColor="#03c75a" onClick={handleNaverLogin}>
+          <NaverLogin />
+        </LongButton>
+      </form>
+
+      <ErrorToast open={open} setOpen={setOpen} errorMessage={errorMessage} />
+    </>
   );
 };
 
