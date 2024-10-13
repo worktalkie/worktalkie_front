@@ -1,10 +1,21 @@
-import { ContentHeader } from "@/packages/ui";
+"use client";
+
+import { ContentHeader, ContentTitle, ScenarioCardList } from "@/packages/ui";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const AiTalk = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [router]);
+
   return (
-    <div>
+    <div className="AiTalkListWrapper px-4">
       <ContentHeader title="AI 토크" hasSearch />
-      AiTalk list
+      <ContentTitle>상황별 대화 연습하기</ContentTitle>
+      <ScenarioCardList />
     </div>
   );
 };

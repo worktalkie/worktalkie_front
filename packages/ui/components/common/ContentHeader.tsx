@@ -39,7 +39,7 @@ export const ContentHeader = ({
         <div className="HeaderText font-[pretendard] font-semibold text-[#21266d] text-[18px] tracking-[-0.18px]">
           {title}
         </div>
-        {hasSearch && (
+        {hasSearch ? (
           <button onClick={handleSearch}>
             <MagnifyingGlassIcon
               width="24"
@@ -47,6 +47,8 @@ export const ContentHeader = ({
               className="text-[#21266d]"
             />
           </button>
+        ) : (
+          <div className="w-[24px] h-[24px]" />
         )}
       </div>
       <div className="mt-[95px]" />

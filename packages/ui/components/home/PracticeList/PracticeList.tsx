@@ -4,7 +4,7 @@ import { ContentTitle } from "../ContentLayout";
 type ScenarioItem = {
   title: string;
   description: string;
-  path: string;
+  id: string;
   imageSrc: string;
   hot?: boolean;
 };
@@ -13,21 +13,21 @@ const data: ScenarioItem[] = [
   {
     title: "제목 1",
     description: "예상소요시간 3분",
-    path: "AiTalk/1",
+    id: "1",
     imageSrc: "/assets/images/testimage.png",
     hot: true,
   },
   {
     title: "제목 2",
     description: "예상소요시간 3분",
-    path: "AiTalk/2",
+    id: "2",
     imageSrc: "/assets/images/testimage.png",
     hot: true,
   },
   {
     title: "제목 3",
     description: "예상소요시간 3분",
-    path: "AiTalk/3",
+    id: "3",
     imageSrc: "/assets/images/testimage.png",
   },
 ];
