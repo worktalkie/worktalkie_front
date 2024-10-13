@@ -38,7 +38,7 @@ export const LoginForm = () => {
 
   const handleSignup = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    router.push("/");
+    router.push("/signup");
   };
 
   const handleNaverLogin = (e: MouseEvent<HTMLButtonElement>) => {
