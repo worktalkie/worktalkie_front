@@ -1,6 +1,6 @@
 "use client";
 
-import { MagnifyingGlassIcon } from "@heroicons/react/16/solid";
+import MagnifyingGlassIcon from "@/packages/icons/magnifying-glass.svg";
 import Image from "next/image";
 
 export const Header = () => {
@@ -14,7 +14,7 @@ export const Header = () => {
           height={20}
         />
         <button>
-          <MagnifyingGlassIcon className="w-[24px] text-white" />
+          <MagnifyingGlassIcon width="24" height="24" className="text-white" />
         </button>
       </div>
     </header>
