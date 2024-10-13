@@ -1,10 +1,10 @@
 "use client";
 
 import { login } from "@/packages/shared/utils/supabase/action";
-import { Divider, ErrorToast, LongButton, TextInput } from "@/packages/ui";
+import { Divider, ErrorToast, LoginInput, LongButton } from "@/packages/ui";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { MouseEvent, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 type loginType = {
@@ -36,38 +36,33 @@ export const LoginForm = () => {
       });
   };
 
+  const handleSignup = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    router.push("/");
+  };
+
+  const handleNaverLogin = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex w-screen gap-2.5 flex-col items-center"
       >
-        {/* ID 입력 필드 */}
-        <TextInput
-          placeholder="ID"
-          {...register("ID", { required: "ID를 입력해 주세요." })}
-        />
-        {errors.ID && (
-          <span className="text-red-500 text-xs text-left w-[270px]">
-            {errors.ID.message}
-          </span>
-        )}
-
-        {/* PW 입력 필드 */}
-        <TextInput
-          type="password"
-          placeholder="Password"
-          {...register("PW", { required: "비밀번호를 입력해 주세요." })}
-        />
-        {errors.PW && (
-          <span className="text-red-500 text-xs text-left w-[270px]">
-            {errors.PW.message}
-          </span>
-        )}
+        <LoginInput register={register} errors={errors} />
 
         <LongButton type="submit">Log In</LongButton>
+        <LongButton
+          onClick={handleSignup}
+          bgColor="#D3DDFF"
+          textColor="#4D4AFE"
+        >
+          회원가입
+        </LongButton>
         <Divider />
-        <LongButton bgColor="#03c75a">
+        <LongButton bgColor="#03c75a" onClick={handleNaverLogin}>
           <NaverLogin />
         </LongButton>
       </form>
