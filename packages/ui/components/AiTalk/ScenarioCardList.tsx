@@ -41,7 +41,7 @@ const data: cardItem[] = [
 
 export const ScenarioCardList = () => {
   return (
-    <div className="ScenarioCardsWrapper flex flex-wrap gap-4 justify-between pb-[80px]">
+    <div className="ScenarioCardsWrapper flex flex-wrap gap-4 justify-between pb-[80px] mt-4">
       {data.map((d) => (
         <ScenarioCard key={d.id} data={d} />
       ))}
