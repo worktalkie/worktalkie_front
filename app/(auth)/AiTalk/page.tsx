@@ -1,5 +1,12 @@
-const AiTalk = ()=>{
-    return <div>AiTalk list</div>
-}
+import { ContentHeader } from "@/packages/ui";
 
-export default AiTalk
+const AiTalk = () => {
+  return (
+    <div>
+      <ContentHeader title="AI 토크" hasSearch />
+      AiTalk list
+    </div>
+  );
+};
+
+export default AiTalk;
