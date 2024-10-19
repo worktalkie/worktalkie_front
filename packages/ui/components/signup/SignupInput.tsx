@@ -32,7 +32,9 @@ export const SignupInput: React.FC<SignupInputProps> = ({
         placeholder={placeholder}
         className="w-full"
       />
-      {errorMessage && <p className="text-red-500 text-sm">{errorMessage}</p>}
+      {errorMessage && (
+        <p className="text-red-500 text-sm mt-2 ml-2">{errorMessage}</p>
+      )}
     </div>
   );
 };

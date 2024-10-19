@@ -130,7 +130,7 @@ export default function SignupForm() {
           </>
         )}
 
-        <LongButton type="submit">
+        <LongButton fullWidth type="submit">
           {currentStep === 4 ? "제출" : "다음"}
         </LongButton>
       </form>
