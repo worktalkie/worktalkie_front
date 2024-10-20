@@ -24,7 +24,8 @@ export const LoginForm = () => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const onSubmit: SubmitHandler<loginType> = (data) => {
-    login(data.ID, data.PW)
+    const loginData = { email: data.ID, password: data.PW };
+    login(loginData)
       .then((success) => {
         if (success) {
           router.push("/home");
