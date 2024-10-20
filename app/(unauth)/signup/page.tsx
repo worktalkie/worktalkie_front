@@ -1,5 +1,6 @@
 "use client";
 
+import { signUp } from "@/packages/shared/utils/supabase";
 import { ContentHeader, LongButton, SignupInput } from "@/packages/ui";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect, useState } from "react";
@@ -49,6 +50,7 @@ export default function SignupForm() {
     register,
     handleSubmit,
     setValue,
+    getValues,
     formState: { errors },
   } = useForm<FormValues>({
     resolver: zodResolver(stepSchemas[currentStep]),
@@ -74,7 +76,16 @@ export default function SignupForm() {
     if (currentStep < 4) {
       setCurrentStep((prevStep) => prevStep + 1);
     } else {
-      console.log("최종 제출", data);
+      const finalData = {
+        name: formValues.name || data.name,
+        email: formValues.email || data.email,
+        ID: formValues.id || data.id,
+        password: data.password,
+      };
+
+      // error, 성공 분기 처리하기
+      signUp(finalData).then((res) => console.log(res));
+      // confirm("회원가입이 완료되었습니다.").then(()=>)
     }
   };
 
