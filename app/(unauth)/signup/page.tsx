@@ -3,6 +3,7 @@
 import { signUp } from "@/packages/shared/utils/supabase";
 import { ContentHeader, LongButton, SignupInput } from "@/packages/ui";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
@@ -36,7 +37,8 @@ type FormValues = {
   confirmPassword: string;
 };
 
-export default function SignupForm() {
+const SignupForm = () => {
+  const router = useRouter();
   const [formValues, setFormValues] = useState<FormValues>({
     name: "",
     email: "",
@@ -50,7 +52,6 @@ export default function SignupForm() {
     register,
     handleSubmit,
     setValue,
-    getValues,
     formState: { errors },
   } = useForm<FormValues>({
     resolver: zodResolver(stepSchemas[currentStep]),
@@ -71,8 +72,6 @@ export default function SignupForm() {
       ...data,
     }));
 
-    console.log("제출된 데이터:", data);
-
     if (currentStep < 4) {
       setCurrentStep((prevStep) => prevStep + 1);
     } else {
@@ -83,9 +82,17 @@ export default function SignupForm() {
         password: data.password,
       };
 
-      // error, 성공 분기 처리하기
-      signUp(finalData).then((res) => console.log(res));
-      // confirm("회원가입이 완료되었습니다.").then(()=>)
+      signUp(finalData)
+        .then((success) => {
+          if (success) {
+            alert("회원가입에 성공했습니다. 다시 로그인해주세요.");
+            router.push("/home");
+          }
+        })
+        .catch(() => {
+          alert("회원가입에 실패했습니다. 다시 시도해주세요.");
+          window.location.reload();
+        });
     }
   };
 
@@ -147,4 +154,6 @@ export default function SignupForm() {
       </form>
     </div>
   );
-}
+};
+
+export default SignupForm;
