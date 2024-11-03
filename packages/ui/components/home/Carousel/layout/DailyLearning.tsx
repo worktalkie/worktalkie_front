@@ -15,7 +15,7 @@ export const DailyLearningCard = ({
   description = "예상소요시간 3분",
   imageSrc = "/assets/images/category_call.png",
   buttonText = "학습하기",
-  path = "/AiTalk/1",
+  path = "/AiTalk/chat/1",
 }: DailyLearningType) => {
   const router = useRouter();
   const handleClick = () => {

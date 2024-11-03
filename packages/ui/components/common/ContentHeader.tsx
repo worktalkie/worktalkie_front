@@ -1,6 +1,6 @@
 "use client";
 
-import ChevronLeft from "@/packages/icons/chevron-left.svg";
+import ChevronLeft from "@/packages/icons/chevron-left_black.svg";
 import MagnifyingGlassIcon from "@/packages/icons/magnifying-glass.svg";
 import { useRouter } from "next/navigation";
 import { MouseEvent } from "react";

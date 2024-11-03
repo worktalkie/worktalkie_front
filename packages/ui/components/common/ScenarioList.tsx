@@ -22,7 +22,7 @@ export const ScenarioList = ({ data }: ScenarioListProps) => {
           key={item.title}
           className="CardContent bg-[#f7f9ff] w-[100%] flex px-3 py-4 gap-3 rounded-b-none rounded-t border border-[#e1e8ff] justify-between items-center"
           onClick={() => {
-            window.location.href = `/AiTalk/${item.id}`;
+            window.location.href = `/AiTalk/chat/${item.id}`;
           }}
         >
           <div className="flex gap-3">

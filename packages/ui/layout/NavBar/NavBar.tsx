@@ -40,14 +40,15 @@ const navItems = [
 export const NavBar = () => {
   const router = useRouter();
   const currentPath = usePathname();
+  const disabledPath = currentPath.startsWith("/AiTalk/chat");
 
-  return (
+  return disabledPath ? null : (
     <nav className="fixed bottom-0 w-full h-[72px] bg-[#fdfdff] shadow-md border-t border-t-gray-200 z-50">
       <ul className="flex justify-around items-center h-full">
         {navItems.map(({ path, label, SvgIcon, SvgIconActive }) => (
           <li
             key={path}
-            onClick={() => router.push(path)}
+            onClick={() => router?.push(path)}
             className="cursor-pointer"
           >
             <div className="flex flex-col items-center">
