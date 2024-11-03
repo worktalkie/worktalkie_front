@@ -14,21 +14,21 @@ const data: ScenarioItem[] = [
     title: "제목 1",
     description: "예상소요시간 3분",
     id: "1",
-    imageSrc: "/assets/images/testimage.png",
+    imageSrc: "/assets/images/category_achievement.png",
     hot: true,
   },
   {
     title: "제목 2",
     description: "예상소요시간 3분",
     id: "2",
-    imageSrc: "/assets/images/testimage.png",
+    imageSrc: "/assets/images/category_emergency.png",
     hot: true,
   },
   {
     title: "제목 3",
     description: "예상소요시간 3분",
     id: "3",
-    imageSrc: "/assets/images/testimage.png",
+    imageSrc: "/assets/images/category_call.png",
   },
 ];
 

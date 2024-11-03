@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "WorkTalkie",
   description: "사회 초년생을 위한 AI 통화 연습 서비스",
+  themeColor: "#4D4AFE",
 };
 
 export default function RootLayout({

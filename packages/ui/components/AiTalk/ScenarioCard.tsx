@@ -15,7 +15,7 @@ export const ScenarioCard = ({ data }: ScenarioCardProps) => {
   const router = useRouter();
   return (
     <div
-      className="Card w-[calc(50%-8px)] aspect-square rounded-[4px] bg-[#4d4afe] p-[10px] relative"
+      className="Card w-[calc(50%-8px)] aspect-square rounded-[4px] border border-[#edf1ff] bg-[#f7f9ff] p-[10px] relative"
       onClick={() => {
         router.push(`/AiTalk/category/${data.id}`);
       }}
@@ -28,7 +28,7 @@ export const ScenarioCard = ({ data }: ScenarioCardProps) => {
           className="object-cover"
         />
       </div>
-      <div className="w-[65%] font-bold font-[pretendard] text-white break-keep line-clamp-2 absolute bottom-2 left-2">
+      <div className="w-[65%] font-bold font-[pretendard] text-[#21266d] break-keep line-clamp-2 absolute bottom-2 left-2">
         {data.title}
       </div>
     </div>

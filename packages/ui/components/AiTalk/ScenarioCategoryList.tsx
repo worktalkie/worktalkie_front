@@ -34,7 +34,7 @@ const data: categoryType = {
       title: "제목 3",
       description: "예상소요시간 3분",
       id: "3",
-      imageSrc: "/assets/images/testimage.png",
+      imageSrc: "/assets/images/category_emergency.png",
     },
   ],
 };
